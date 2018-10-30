@@ -1,0 +1,8 @@
+prefix=/home/bingbing/catkin_ws/devel
+
+Name: GERO_v1
+Description: Description of GERO_v1
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/bingbing/catkin_ws/devel/lib 
+Requires: 

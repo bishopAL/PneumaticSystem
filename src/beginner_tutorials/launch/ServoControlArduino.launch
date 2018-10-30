@@ -1,0 +1,11 @@
+<launch>
+
+  <group ns="servo_controller">
+    <node pkg="beginner_tutorials" name="controller" type="servocontroller.py"/>
+  </group>
+
+  <group ns="serialport_node">
+    <node pkg="rosserial_python" name="serialport" type="serial_node.py"/>
+  </group>
+
+</launch>
