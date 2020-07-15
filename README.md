@@ -1,5 +1,4 @@
-# Arduino_ROS_Based-Manipulator-Controller
+# pneumatic end-effector control system
 ## Structure
-manipulator part: webcam -> PC -> arduino -> manipulator
 
-pneumatic part: PC -> pneumatic control system -> end effector
+PC -> pneumatic control system -> several solenoid valves -> end effector
