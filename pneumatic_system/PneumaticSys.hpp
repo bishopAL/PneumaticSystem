@@ -12,5 +12,4 @@ public:
 	void enablePositivePneumatic(int i);
 	void enableNegtivePneumatic(int i);
 	void holdPressure(int i);
-	int separateFlag(int flag);
 };

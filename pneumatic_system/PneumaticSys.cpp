@@ -3,15 +3,12 @@
 
 PneumaticSys::PneumaticSys()
 {
-    for(int i=0; i<4; i++)
+    for(int i=0; i<4; i++)  //i=0:4 <-> 脚顺序：RF RH LF LH
     {
         for(int j=0; j<4; j++)
         {
             SV[i][j] = i*4 + j;
-            Serial.print(i*4 + j);
-            Serial.print(",");
         }
-        Serial.println(" ");
     }
 
   	for(int i=0; i<4; i++)
@@ -28,7 +25,6 @@ PneumaticSys::PneumaticSys()
         digitalWrite(SV[i][3], LOW); //三号电磁阀，泄压阀
         digitalWrite(SV[i][4], LOW); //四号电磁阀，总阀门
     }
-    Serial.println("Initialize Done! Ready to Work!");
 }
 
 
