@@ -7,7 +7,7 @@ PneumaticSys::PneumaticSys()
     {
         for(int j=0; j<4; j++)
         {
-            SV[i][j] = i*4 + j;
+            SV[i][j] = i*4 + j + 22;
         }
     }
 
