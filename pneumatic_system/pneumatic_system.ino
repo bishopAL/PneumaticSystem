@@ -29,6 +29,7 @@ void setup() {
     previousPressureStatus[i] = 0;
     presentPressureStatus[i] = 0;
   }
+  
   Serial.print("当前电磁阀编号状态：");
   for(int i=0; i<4; i++)  //i=0:4 <-> 脚顺序：RF RH LF LH
     {
@@ -40,8 +41,8 @@ void setup() {
     }
    Serial.println(" ");
 
-   analogWrite(12, int(0.03/0.9*255)); // 充气电气比例阀电压设置
-   analogWrite(13, int(0.1/0.9*255)); // 吸气电气比例阀电压设置
+   analogWrite(10, int(0.07/0.9*255)); // 充气电气比例阀电压设置
+   analogWrite(11, int(0.25/0.9*255)); // 吸气电气比例阀电压设置
    lcd.init(); 
    lcd.backlight();
 }
@@ -59,8 +60,6 @@ void loop()
     lcd.setCursor(0, 0);
     lcd.print("S");
     Serial.readBytes(temp, 4);
-    
-    Serial.print("temp：");
     if(temp[0] >= 48 && temp[1] >= 48 && temp[2] >= 48 &&temp[3] >= 48 )
     {
       for(int i=0; i<4; i++)
@@ -87,6 +86,7 @@ void loop()
           case 2:ps.enableNegtivePneumatic(i);  break;
         }
    }
+   
 //     delay(500);
 //      for (int i=0; i<4; i++)
 //     {
@@ -95,14 +95,14 @@ void loop()
 //           ps.holdPressure(i);
 //        }
 //     }
-     Serial.print("当前状态：");
-     for(int i=0; i<4; i++)
-     {   
-        Serial.print(presentPressureStatus[i]);
-        Serial.print(",");
-     }
-     Serial.println(" ");
+
+//     Serial.print("当前状态：");
+//     for(int i=0; i<4; i++)
+//     {   
+//        Serial.print(presentPressureStatus[i]);
+//        Serial.print(",");
+//     }
+//     Serial.println(" ");
      
       
-  
 }

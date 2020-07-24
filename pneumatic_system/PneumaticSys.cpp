@@ -10,6 +10,7 @@ PneumaticSys::PneumaticSys()
             SV[i][j] = i*3 + j + 2;
         }
     }
+    SV[2][2] = SV[2][2] + 2;
     SV[3][0] = SV[3][0] + 3; //最后三个电磁阀用14，15，16，把digital口给电气比例阀用
     SV[3][1] = SV[3][1] + 3;
     SV[3][2] = SV[3][2] + 3;
@@ -27,8 +28,8 @@ PneumaticSys::PneumaticSys()
         digitalWrite(SV[i][2], LOW); //三号电磁阀，泄压阀
         //digitalWrite(SV[i][3], LOW); //四号电磁阀，总阀门
     }
-    pinMode(12, OUTPUT); // 电气比例阀1号，负责充气气压
-    pinMode(13, OUTPUT); // 电气比例阀2号，负责吸气气压
+    pinMode(10, OUTPUT); // 电气比例阀1号，负责充气气压
+    pinMode(11, OUTPUT); // 电气比例阀2号，负责吸气气压
 }
 
 
