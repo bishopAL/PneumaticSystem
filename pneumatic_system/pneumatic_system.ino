@@ -41,7 +41,7 @@ void setup() {
     }
    Serial.println(" ");
 
-   analogWrite(10, int(0.07/0.9*255)); // 充气电气比例阀电压设置
+   analogWrite(10, int(0.09/0.9*255)); // 充气电气比例阀电压设置
    analogWrite(11, int(0.25/0.9*255)); // 吸气电气比例阀电压设置
    lcd.init(); 
    lcd.backlight();
