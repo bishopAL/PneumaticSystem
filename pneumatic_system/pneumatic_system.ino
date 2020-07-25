@@ -1,7 +1,7 @@
 #include "PneumaticSys.hpp"
 #include <Wire.h> 
 #include <LiquidCrystal_I2C.h>
-
+#define USING_OUTSIDE 1
 LiquidCrystal_I2C lcd(0x27,16,2);
 
 PneumaticSys ps;
@@ -65,6 +65,13 @@ void loop()
       for(int i=0; i<4; i++)
       {
         presentPressureStatus[i] = temp[i] - 48;
+      }
+      if(USING_OUTSIDE)
+      {
+        lcd.setCursor(0, 1);
+        lcd.print("O");
+        presentPressureStatus[2] = temp[3] - 48; // f**king shit
+        presentPressureStatus[3] = temp[2] - 48; // f**king shit
       }
     }
     
